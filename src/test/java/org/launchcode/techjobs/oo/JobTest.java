@@ -1,18 +1,10 @@
-package org.launchcode.techjobs.oo.test;
+package org.launchcode.techjobs.oo;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-import org.launchcode.techjobs.oo.*;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
-/**
- * Created by LaunchCode
- */
-@RunWith(JUnit4.class)
 public class JobTest {
 
     Job test_job_1;
@@ -82,7 +74,7 @@ public class JobTest {
     public void testToStringStartsAndEndsWithNewLine() {
         Job test_job_10 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         char firstChar = test_job_10.toString().charAt(0);
-        char lastChar = test_job_10.toString().charAt(test_job_10.toString().length()-1);
+        char lastChar = test_job_10.toString().charAt(test_job_10.toString().length() - 1);
         assertEquals(firstChar, '\n');
         assertEquals(lastChar, '\n');
         //assertEquals("\nID: " + test_job_10.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n", test_job_10.toString());
@@ -96,7 +88,7 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
-        Job test_job_10 =  new Job("Your Dream Job", new Employer("Bumble"), new Location("Remote"), new PositionType("Front end developer"), new CoreCompetency("Positive attitude"));
+        Job test_job_10 = new Job("Your Dream Job", new Employer("Bumble"), new Location("Remote"), new PositionType("Front end developer"), new CoreCompetency("Positive attitude"));
         assertEquals("\nID: " + test_job_10.getId() + "\nName: Your Dream Job\nEmployer: Bumble\nLocation: Remote\nPosition Type: Front end developer\nCore Competency: Positive attitude\n", test_job_10.toString());
     }
 }
